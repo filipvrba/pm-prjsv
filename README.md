@@ -1,1 +1,1 @@
-# pm-prjsv
+# Package Manager for RJSV
