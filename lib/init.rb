@@ -5,6 +5,8 @@ module RJSV
       require_relative './package-manager/cli/arguments'
 
       require_relative './package-manager/states'
+      require_relative './package-manager/hash'
+      require_relative './package-manager/io'
 
       class Init < RJSV::Plugin
         def initialize
@@ -25,6 +27,7 @@ module RJSV
         end
 
         def init()
+          PackageManager::States.create_state(@arguments_cli.options)
           PackageManager::States.install_state(@arguments_cli.options)
         end
       end#Init

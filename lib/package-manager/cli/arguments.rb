@@ -4,6 +4,7 @@ module RJSV
       module CLI
         module Arguments
           @options = {
+            create: nil,
             install: nil,
           }
 
@@ -17,6 +18,9 @@ module RJSV
                 "\nOptions:"
               )
 
+              parser.on( "create", "", "Creates a package from a web project." ) do
+                @options[:create] = true
+              end
               parser.on( "install PACKAGE", "", "The package is installed in\n" +
                                                 "the working folder." ) do |package|
                 @options[:install] = package
